@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicles</title>
+    <link rel="icon" href="./img/icon.png">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="./styles/NiceInput.css">
+    <link rel="stylesheet" href="./styles/main.css">
+
+    
+
+    <link rel="preload" as="image" href="./img/auckland4.jpg">
+    <link rel="preload" as="image" href="./img/wellington.jpg">
+    <link rel="preload" as="image" href="./img/christchurch.jpg">
+
+</head>
+<body>
+    
+    <header class="relative header-styling">
+        <div class="logo-wrapper-header absolute">
+            <a href="https://www.tourismnewzealand.com/" target="_blank"><img src="./img/logo.png" alt="New Zealand Tourism Logo"></a>
+        </div>
+        <nav class="flex justify-center nav-styling">
+            <a href="https://www.tourismnewzealand.com/" target="_blank"><h2 class="padding-left-right-miniscule">Home</h2></a>
+            <h2 class="padding-left-right-miniscule">Accomodation</h2>
+            <a href="./index.html"><h2 class="padding-left-right-miniscule">Vehicles</h2></a>
+            <h2 class="padding-left-right-miniscule">Abcdefg</h2>
+        </nav>
+    </header>
+
+
+    <div id="container-image-switch" class="home-page-container auckland-image-url">
+        
+        <section class="homepage-main-section">
+
+            <!-- <div id="myCarousel" class="carousel container slide">
+                <div class="carousel-inner">
+                        <div class="active item one"></div>
+                        <div class="item two"></div>
+                        <div class="item three"></div>
+                </div>
+            </div> -->
+
+            <div class="text-part-of-section">
+                <h3 class="car-rental-text animate__animated animate__fadeIn">Car Rental</h3>
+                <h1 id="location-text" class="margin-bottom-spacing animate__animated animate__fadeIn">Auckland</h1>
+                <p class="margin-bottom-spacing animate__animated animate__fadeIn">Find that holiday feeling. Book your car rental today and begin your summer journey...</p>
+            </div>
+    
+            <div class="input-box-part-of-section">
+                <div class="flex justify-center align-center white-container">
+                    <div class="input-holder flex column small-margin-right-gap">
+
+                            <select id="people-in-party" class="small-margin-bottom-gap border-none">
+
+                                <option value="">People in party</option>
+
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                                <option value=6>6</option>
+                                <option value=7>7</option>
+                                <option value=8>8</option>
+
+                            </select>
+
+
+                            <select id="pickup-location" class="small-margin-top-gap border-none">
+
+                                <!-- <option value="">Pickup Location</option> -->
+
+                                <option value="Auckland">Auckland</option>
+                                <option value="Wellington">Wellington</option>
+                                <option value="Christchurch">Christchurch</option>
+
+                            </select>
+
+                    </div>
+                    <div class="input-holder flex column small-margin-left-gap">
+
+
+                        <!-- <input placeholder="Select your dates" id="date-selector-please" class="small-margin-bottom-gap border-none"> -->
+
+                        <div class="group small-margin-bottom-gap">
+                            <input id="date-selector-please">
+                            <span class="highlighter"></span>
+                            <label id="label-for-date" for="date-selector-please">Select your dates: </label>
+                        </div>
+
+                        <select id="travel-distance" class="small-margin-top-gap border-none">
+
+                            <option value="">Travel Distance</option>
+
+                            <option value=100>100km</option>
+                            <option value=200>200km</option>
+                            <option value=300>300km</option>
+                            <option value=400>400km</option>
+                            <option value=500>500km</option>
+                            <option value=600>600km</option>
+                            <option value=700>700km</option>
+                            <option value=800>800km</option>
+                            <option value=900>900km</option>
+
+                        </select>
+
+                    </div>
+
+                    <div>
+                        <div id="search-button" class="search-icon-img-wrapper">
+                            <img src="./img/search.svg" alt="search icon">
+                        </div>
+                    </div>
+ 
+
+                </div>
+            </div>
+            
+        </section>
+
+
+
+    </div>
+
+    <section class="more-info-section flex">
+
+        <div class="pair flex">
+
+            <div class="part-one">
+                <h1 class="more-info-milestone">more info milestone</h1>
+                <p>asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf </p>
+                <p>asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf asd asdf </p>
+            </div>
+
+            <div class="part-two">
+                <div class="more-info-img-wrapper">
+                    <img src="./img/kidhappy.jpg" alt="">
+                </div>
+            </div>
+
+
+        </div>
+
+        
+
+    </section>
+
+
+
+
+    <!-- put the jquery first -->
+    <!-- always put my js files last -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $('.carousel').carousel({interval: 7000});
+        });
+      </script>
+      
+
+
+    <script src="./javascript/libraries/date_calculator.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="./javascript/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+* { margin:0; padding:0; font-family:monospace!important;}
+a { text-decoration:none; }
+
+.negative-z-index {
+    z-index:-1;
+}
+
+:root {
+    --animate-duration: 1400ms;
+    --animate-delay:0.1s;
+    
+  }
+
+body {background-color:#171717fa;}
+
+.hidden { display:none !important; }
+.not-hidden { display:block !important; }
+
+.border-none { border:none; }
+.border-none:focus { outline:none; }
+
+.absolute { position:absolute; }
+.relative { position:relative; }
+
+.text-align-center { text-align: center; }
+.flex-center { justify-content: center; align-items: center; }
+.flex { display:flex; }
+.column { flex-direction: column; }
+.flex-one { flex:1; }
+.flexwrap { flex-wrap: wrap; }
+
+.justify-center { justify-content:center; }
+.align-center { align-items: center; }
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+
+.small-margin-right-gap { margin-right:10px; }
+.small-margin-left-gap { margin-left:10px; }
+.small-margin-top-gap { margin-top:4px; }
+.small-margin-bottom-gap { margin-bottom:4px; }
+
+.margin-bottom-spacing { margin-bottom:8px; }
+
+.header-styling {
+    background-color:#171717;
+    color:white;
+}
+
+.nav-styling {
+    padding-top:24px;
+    padding-bottom:24px;
+}
+.nav-styling a {
+    color:white;
+}
+
+.logo-wrapper-header { max-width:144px; left:32px; top:12px; }
+.logo-wrapper-header img { height:100%; width:100%; }
+.padding-left-right-miniscule { margin-left:clamp(10px, 2vw, 18vw); margin-right:clamp(10px, 2vw, 22vw); }
+.light-highlight-for-show-this-site-is-the-one-im-on { background-color: #343434 !important; }
+
+.car-rental-text { font-size:22px; }
+
+.home-page-container {
+    margin-left:40px;
+    margin-bottom:60px;
+    border-radius:0px 20px 0px 20px;
+
+    height:84vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    /* background-image: url("../img/wellington.jpg"); */
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.auckland-image-url { background-image: url("../img/auckland4.jpg"); }
+.wellington-image-url { background-image: url("../img/wellington.jpg"); }
+.christchurch-image-url { background-image: url("../img/christchurch.jpg"); }
+
+.homepage-main-section {
+
+}
+
+.text-part-of-section {
+    color:white;
+}
+
+.text-part-of-section h3 {
+    font-size:22px;
+    max-width:300px;
+}
+.text-part-of-section h1 {
+    font-size:40px;
+    max-width:300px;
+}
+.text-part-of-section p {
+    font-size:18px;
+    max-width:500px;
+}
+
+.white-container {
+    background-color:rgba(255, 255, 255, 0.879);
+    padding:20px 30px;
+}
+.white-container {
+
+}
+
+.input-holder input {
+    width:200px;
+}
+
+.search-icon-img-wrapper {
+    max-width:40px;
+    max-height:40px;
+    background-color:#41913C;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-left:20px;
+    padding:5px;
+    cursor:pointer;
+}
+.search-icon-img-wrapper img {
+    height:100%;
+    width:100%;
+
+}
+
+.input-holder * {
+    height:50px;
+    min-width:307px;
+}
+
+
+.more-info-section {
+    max-width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+    color:white;
+    background-color:rgb(46, 46, 46);
+}
+.more-info-milestone {
+    font-size:40px;
+    color:white;
+}
+
+.more-info-img-wrapper {
+    max-height:500px;
+    max-width:500px;
+}
+.more-info-img-wrapper img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:left;
+}
+
+.pair {
+    margin:0 auto;
+    padding:40px;
+}
+.part-one {
+    flex:1;
+    max-width:500px;
+}
+.part-two {
+    flex:1;
+    /* max-width:500px; */
+}
+
+/* ------------------------------------------ */
+/*              results page */
+/* ------------------------------------------ */
+
+.nice-margin-page {
+    margin:0 40px;
+}
+
+.title-result {
+    color:white;
+    font-size:50px;
+    text-align:center;
+    margin-bottom:24px;
+    margin-top:40px;
+}
+.found-result {
+    color:white;
+    font-size:30px;
+    text-align:center;
+    margin-bottom:40px;
+}
+.lighter-green{
+    color:#77ED70;
+}
+
+.info-section-card {
+    margin:10px auto;
+    max-width: 1200px;
+    background-color:white;
+}
+
+.img-wrapper-car {
+    width:300px;
+    /* height:240px; */
+    margin:auto 0;
+}
+.img-wrapper-car img {
+    height:100%;
+    width:100%;
+    object-fit: contain;
+    background-color: #fff;
+}
+
+.info-about-car {
+    margin-left:12px;
+    margin-right:12px;
+    padding:8px 0;
+    flex:1;
+    justify-content:space-between;
+}
+.info-about-car * {
+    margin-left:3px;
+}
+.info-about-car p {
+    margin-top:14px;
+    max-width:90%;
+    flex:1;
+}
+.info-about-car h2 {
+    margin-top:10px;
+    margin-left:0px;
+}
+.info-about-car h3 {
+    margin-top:6px;
+}
+.info-about-car h4 {
+    margin-top:20px;
+    margin-bottom:28px;
+    text-decoration:underline;
+    cursor:pointer;
+    width:fit-content;
+    color:#F88A0A;
+}
+
+
+.hire-me-div {
+    margin-right:24px;
+    justify-content: end;
+    margin-bottom:40px;
+}
+.hire-me-div p {
+    margin-bottom:10px;
+}
+.hire-me {
+    text-align:center;
+    background-color:#41913C;
+    color:white;
+    padding:8px;
+    cursor:pointer;
+}
+
+
+
+
+
+/* CAROUSEL PART */
+
+.carousel { z-index: -99; } /* keeps this behind all content */
+.carousel .item {
+    position: fixed; 
+    width: 100%; height: 100%;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+
+}
+.carousel .one {
+    background: url(../img/auckland2.jpg);
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .two {
+    background: url(../img/auckland4.jpg);
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .three {
+    background: url(../img/auckland3.jpg);
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .active.left {
+    left:0;
+    opacity:0;
+    z-index:2;
+}
+
+/* CAROUSEL PART */

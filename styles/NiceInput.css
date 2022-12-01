@@ -1,0 +1,77 @@
+* { box-sizing:border-box; }
+
+/* basic stylings ------------------------------------------ */
+.container 		{ 
+  margin:0 auto; 
+  display:block; 
+  background:rgb(250, 238, 223);
+  padding:6px;
+  border-radius: 4px;
+}
+
+
+/* form starting stylings ------------------------------- */
+.group { 
+  position:relative; 
+}
+input 				{
+  padding:10px 10px 10px 5px;
+  display:block;
+  border:none;
+  background-color:rgb(255, 255, 255);
+}
+input:focus { outline:none; }
+
+
+/* LABEL ======================================= */
+label 				 {
+  color:rgb(0, 0, 0);
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:18px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-18px;
+  font-size:14px;
+  color:#171717;
+}
+
+
+
+/* HIGHLIGHTER ================================== */
+.highlighter {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:rgba(88, 88, 88, 0.244); }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:rgba(88, 88, 88, 0.244); }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:rgba(88, 88, 88, 0.244); }
+  to 	{ width:0; background:transparent; }
+}
