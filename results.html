@@ -46,7 +46,7 @@
                 </span>
             </span>
 
-            and <span class="lighter-green" id="results-people">_</span>
+            <span>and</span> <span class="lighter-green" id="results-people">_</span>
             
             <span class="relative">
                 <i class="arrow down"></i>
@@ -68,13 +68,27 @@
 
         </h1>
 
-        <h3 class="found-result">Found:
-                 <span id="motorbikes-amount" class="lighter-green">_</span>
-            <span id="small-cars-amount" class="lighter-green">_</span>
-            <span id="large-cars-amount" class="lighter-green">_</span>
-            <span id="motor-home-amount" class="lighter-green">_</span> 
+        <h3 id="found-results-h3" class="found-result">Found:
+            <span id="motorbikes-amount" class="lighter-green found-amount">_</span> <span class="hidden" id="after-motorbike-and">and</span>
+            <span id="small-cars-amount" class="lighter-green found-amount">_</span> <span class="hidden" id="after-small-car-and">and</span>
+            <span id="large-cars-amount" class="lighter-green found-amount">_</span> <span class="hidden" id="after-large-car-and">and</span>
+            <span id="motor-home-amount" class="lighter-green found-amount">_</span> 
             to pickup from <span id="results-location" class="lighter-green">_</span></h3>
 
+
+        <div id="refine-search">
+            <p class="refine-search-h1">Your search - <span id="theirdaysandpeople">their days and people</span> - did not match with any vehicle in our armada.</p>
+            <p>Suggestions:</p>
+            <ul>
+                <li>Try entering a day value less than or equal to 10</li>
+                <li>Try entering a people value less than or equal to 6</li>
+                <li>Pray</li>
+            </ul>
+            <div class="cute-dog-img-wrapper">
+                <img src="./img/sad_dog.jpg" alt="">
+            </div>
+        </div>
+        
     </section>
 
     <section id="vehicles-container" class="nice-margin-page"></section>

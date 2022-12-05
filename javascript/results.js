@@ -19,7 +19,7 @@ Object.defineProperty(String.prototype, 'capitalize', {
         max_days:5,
         fuel_usage:3.7,
         img:"../img/motorbike.jpg",
-        desc:"this bike is fun"
+        desc:"this bike is fun this bike is fun this bike is fun this bike is fun this bike is fun this bike is fun this bike is fun this bike is fun this bike is fun this bike is fun this bike is fun this bike is fun this bike is fun this bike is fun this bike is fun"
     },
     {
         id:1,
@@ -32,7 +32,7 @@ Object.defineProperty(String.prototype, 'capitalize', {
         max_days:10,
         fuel_usage:8.5,
         img:"../img/small-car.jpg",
-        desc:"this car is epic"
+        desc:"this car is epic this car is epic this car is epic this car is epic this car is epic this car is epic this car is epic this car is epic this car is epic this car is epic this car is epic this car is epic this car is epic this car is epic this car is epic"
     },
     {
         id:2,
@@ -45,7 +45,7 @@ Object.defineProperty(String.prototype, 'capitalize', {
         max_days:10,
         fuel_usage:9.7,
         img:"../img/large-car2.jpg",
-        desc:"this vehicle is awesome"
+        desc:"this vehicle is awesome this vehicle is awesome this vehicle is awesome this vehicle is awesome this vehicle is awesome this vehicle is awesome this vehicle is awesome this vehicle is awesome this vehicle is awesome this vehicle is awesome this vehicle is awesome this vehicle is awesome"
     },
     {
         id:3,
@@ -58,7 +58,7 @@ Object.defineProperty(String.prototype, 'capitalize', {
         max_days:15,
         fuel_usage:17,
         img:"../img/motor-home2.png",
-        desc:"this vehicle is okay"
+        desc:"this vehicle is okay this vehicle is okay this vehicle is okay this vehicle is okay this vehicle is okay this vehicle is okay this vehicle is okay this vehicle is okay this vehicle is okay this vehicle is okay this vehicle is okay this vehicle is okay this vehicle is okay this vehicle is okay this vehicle is okay"
     }
 ]
 
@@ -112,16 +112,41 @@ for(let vehicle of Vehicles) {
         result += word + " ";
     }
     // really bad code to capitalise the first letter of each word for the vehicle types -------------------
+
     vehicle_type.innerHTML = result;
     info_text_part.appendChild(vehicle_type);
 
     let vehicle_paragraph = document.createElement("p");
-    vehicle_paragraph.innerHTML = vehicle.desc;
     info_text_part.appendChild(vehicle_paragraph);
 
-    let learn_more = document.createElement("h4");
+    let full_vehicle_paragraph = document.createElement("span");
+    full_vehicle_paragraph.innerHTML = vehicle.desc + ". ";
+    full_vehicle_paragraph.classList.add("hidden")
+    vehicle_paragraph.appendChild(full_vehicle_paragraph);
+
+    let part_vehicle_paragraph = document.createElement("span");
+    part_vehicle_paragraph.innerHTML = vehicle.desc.split(' ').slice(0, 30).join(' ') + "..." + " ";
+    vehicle_paragraph.appendChild(part_vehicle_paragraph);
+
+    let learn_more = document.createElement("span");
+    learn_more.id = "learn-more";
     learn_more.innerHTML = "Learn more";
-    info_text_part.appendChild(learn_more);
+    vehicle_paragraph.appendChild(learn_more);
+
+    learn_more.onclick = function() {
+        if(full_vehicle_paragraph.classList.contains("hidden")) {
+            part_vehicle_paragraph.classList.add("hidden");
+            full_vehicle_paragraph.classList.remove("hidden");
+            learn_more.classList.add("black-text", "text-decoration-none");
+            learn_more.innerHTML = "Learn less"
+        }
+        else if(part_vehicle_paragraph.classList.contains("hidden")) {
+            full_vehicle_paragraph.classList.add("hidden");
+            part_vehicle_paragraph.classList.remove("hidden");
+            learn_more.classList.remove("black-text", "text-decoration-none")
+            learn_more.innerHTML = "Learn more"
+        }
+    }
 
     let hire_me_div = document.createElement("div");
     hire_me_div.classList.add("flex", "column", "hire-me-div");
@@ -211,29 +236,67 @@ function update_allowed_vehicles() {
         }
     }
 
+    let after_motorbike_and = document.getElementById("after-motorbike-and");
+    let after_small_car_and = document.getElementById("after-small-car-and");
+    let after_large_car_and = document.getElementById("after-large-car-and");
+
+
+    let results_h3 = document.getElementById("found-results-h3");
+    let refine_search = document.getElementById("refine-search");
+
+    if(motorbike_number == 0 && small_car_number == 0 && large_car_number == 0 && motor_home_number == 0) {
+        results_h3.classList.add("hidden");
+        refine_search.classList.remove("hidden");
+    }
+    else {
+        results_h3.classList.remove("hidden");
+        refine_search.classList.add("hidden");
+    }
+
     if(motorbike_number !== 0) {
         motorbike_amount.innerHTML = motorbike_number + " Motorbikes";
         motorbike_amount.classList.remove("hidden");
+        if(small_car_number > 0 || large_car_number > 0 || motor_home_number > 0) {
+            after_motorbike_and.classList.remove("hidden");
+        }
+        else {
+            after_motorbike_and.classList.add("hidden");
+        }
     }
     else {
         motorbike_amount.classList.add("hidden");
+        after_motorbike_and.classList.add("hidden");
     }
-
+    // "<span>and </span>" + 
     if(small_car_number !== 0) {
         small_car_amount.innerHTML = small_car_number + " Small Cars";
         small_car_amount.classList.remove("hidden");
+        if(large_car_number > 0 || motor_home_number > 0) {
+            after_small_car_and.classList.remove("hidden");
+        }
+        else {
+            after_small_car_and.classList.add("hidden");
+        }
     }
     else {
         small_car_amount.classList.add("hidden");
+        after_small_car_and.classList.add("hidden");
     }
 
 
     if(large_car_number !== 0) {
         large_car_amount.innerHTML = large_car_number + " Large Cars";
         large_car_amount.classList.remove("hidden");
+        if(motor_home_number > 0) {
+            after_large_car_and.classList.remove("hidden");
+        }
+        else {
+            after_large_car_and.classList.add("hidden");
+        }
     }
     else {
         large_car_amount.classList.add("hidden");
+        after_large_car_and.classList.add("hidden");
     }
 
 
@@ -244,6 +307,11 @@ function update_allowed_vehicles() {
     else {
         motor_home_amount.classList.add("hidden");
     }
+
+
+    let their_days_and_people = document.getElementById("theirdaysandpeople");
+    their_days_and_people.innerHTML = NumberOfDays + " days and " + peopleInPartyValue + " people"
+
 }
 
 
@@ -274,7 +342,6 @@ for(let day of all_day_content_options) {
         for(let content of all_arrow_down_content) {
             content.classList.add("hidden");
         }
-        console.log(NumberOfDays)
         update_prices();
         update_allowed_vehicles();
     }

@@ -35,21 +35,20 @@ pickup_location.onchange = function() {
 let search_button = $("#search-button")[0];
 search_button.onclick = function() {
 
-    
-
-    
-    
-    let peopleInPartyValue = $("#people-in-party")[0].value;
+    let peopleInParty = $("#people-in-party")[0];
+    let peopleInPartyValue = peopleInParty.value;
 
     let dateElement = $("#date-selector-please")[0];
-    let dateElementValue = dateElement.value
+    let dateElementValue = dateElement.value;
     let first_date_value = dateElementValue.slice(0,10);
     let second_date_value = dateElementValue.slice(14,24);
     let numberOfDays = calculate_day_difference(first_date_value, second_date_value);
     
-    let pickupLocationValue = $("#pickup-location")[0].value.toLowerCase();
+    let pickupLocationElement = $("#pickup-location")[0]
+    let pickupLocationValue = pickupLocationElement.value.toLowerCase();
 
-    let travelDistanceValue = $("#travel-distance")[0].value;
+    let travelDistanceElement = $("#travel-distance")[0];
+    let travelDistanceValue = travelDistanceElement.value;
 
 
     localStorage.setItem('PeopleInParty', peopleInPartyValue);
@@ -58,7 +57,52 @@ search_button.onclick = function() {
     localStorage.setItem('TravelDistance', travelDistanceValue);
 
 
-    window.open("../results.html", "_self");
+    if(peopleInPartyValue && numberOfDays && pickupLocationValue && travelDistanceValue) {
+        window.open("../results.html", "_self");
+    }
+    else {
+        valueChecker(peopleInPartyValue, peopleInParty, first_date_value, second_date_value,
+            dateElementValue, pickupLocationValue, pickupLocationElement,
+            travelDistanceValue, travelDistanceElement);
+    }
+
+
 }
 
 
+function valueChecker(peopleInPartyValue, peopleInParty, first_date_value, second_date_value,
+                      dateElementValue, pickupLocationValue, pickupLocationElement,
+                      travelDistanceValue, travelDistanceElement) {
+    
+
+    if(!peopleInPartyValue) {
+        peopleInParty.classList.add("red-border");
+    }
+    else {
+        peopleInParty.classList.remove("red-border");
+    }
+    
+    let group = document.getElementsByClassName("group")[0];
+    if(!first_date_value || !second_date_value || dateElementValue.length < 20) {
+        group.classList.add("red-border");
+    }
+    else {
+        group.classList.remove("red-border");
+    }
+
+    if(!pickupLocationValue) {
+        pickupLocationElement.classList.add("red-border");
+    }
+    else {
+        pickupLocationElement.classList.remove("red-border");
+    }
+
+
+    if(!travelDistanceValue) {
+        travelDistanceElement.classList.add("red-border");
+    }
+    else {
+        travelDistanceElement.classList.remove("red-border");
+    }
+
+}
