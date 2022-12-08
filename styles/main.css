@@ -4,19 +4,33 @@
     font-family: "Quicksand" !important;
 }
 
+br {
+    display: none;
+}
+
+.body-child {
+    position: relative;
+    z-index: 1;
+}
+
+
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .red-border {
     outline: red solid 2px !important;
 }
+
 .black-text {
-    color:black !important;
+    color: black !important;
 }
+
 .text-decoration-none {
-    text-decoration:none !important;
+    text-decoration: none !important;
 }
+
 .black {
     background-color: black !important;
     color: white;
@@ -110,11 +124,11 @@ body {
 }
 
 .small-margin-top-gap {
-    margin-top: 4px;
+    margin-top: 4px !important;
 }
 
 .small-margin-bottom-gap {
-    margin-bottom: 4px;
+    margin-bottom: 4px !important;
 }
 
 .margin-bottom-spacing {
@@ -127,6 +141,8 @@ body {
 }
 
 .nav-styling {
+    position: relative;
+    font-size: clamp(13px, 1.3vw, 20px);
     padding-top: 24px;
     padding-bottom: 24px;
 }
@@ -169,7 +185,6 @@ body {
     justify-content: center;
     align-items: center;
 
-    /* background-image: url("../img/wellington.jpg"); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -186,8 +201,6 @@ body {
 .christchurch-image-url {
     background-image: url("../img/christchurch.jpg");
 }
-
-.homepage-main-section {}
 
 .text-part-of-section {
     color: white;
@@ -212,8 +225,6 @@ body {
     background-color: rgba(255, 255, 255, 0.879);
     padding: 20px 30px;
 }
-
-.white-container {}
 
 select {
     font-size: 16px;
@@ -247,6 +258,15 @@ select {
     min-width: 307px;
 }
 
+
+
+.fuel-cost-div p {
+    font-size: 20px;
+}
+
+.this-vehicle-burns-p {
+    font-size: clamp(16px, 2.4vw, 18px) !important;
+}
 
 .more-info-section {
     max-width: 1200px;
@@ -285,7 +305,6 @@ select {
 
 .part-two {
     flex: 1;
-    /* max-width:500px; */
 }
 
 /* ------------------------------------------ */
@@ -298,7 +317,7 @@ select {
 
 .title-result {
     color: white;
-    font-size: 40px;
+    font-size: clamp(28px, 3vw, 40px);
     text-align: center;
     margin-bottom: 24px;
     margin-top: 40px;
@@ -307,25 +326,25 @@ select {
 
 .found-result {
     color: white;
-    font-size: 18px;
+    font-size: clamp(16px, 1.6vw, 18px);
     text-align: center;
     margin-bottom: 40px;
 }
 
 #results-days {
-    font-size: 44px;
+    font-size: clamp(30px, 3.2vw, 44px);
 }
 
 #results-people {
-    font-size: 44px;
+    font-size: clamp(30px, 3.2vw, 44px);
 }
 
 .found-amount {
-    font-size: 22px;
+    font-size: clamp(20px, 1.8vw, 22px);
 }
 
 #results-location {
-    font-size: 22px;
+    font-size: clamp(20px, 1.8vw, 22px);
 }
 
 #refine-search {
@@ -370,18 +389,43 @@ select {
     color: #77ED70;
 }
 
+
+#dropdown-closer {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+#modal-closer {
+    backdrop-filter: brightness(0.5) blur(3px);
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 4;
+}
+
 .arrow-content div *:hover {
     background-color: white;
     color: #171717;
+}
+
+.arrow-container {
+    overflow: scroll;
 }
 
 .arrow-content div * {
     cursor: pointer;
 }
 
-.arrow-content {
-    position: absolute;
 
+.arrow-content {
+    width: 43px;
+    position: absolute;
     font-size: 26px;
     color: white;
     background-color: rgb(46, 46, 46);
@@ -390,6 +434,10 @@ select {
     right: 0px;
     text-align: center;
     /* border:white solid 4px; */
+}
+
+.arrow-container {
+    z-index: 3;
 }
 
 .arrow {
@@ -414,9 +462,6 @@ select {
     margin: 30px auto;
     max-width: 1000px;
     background-color: rgb(255, 255, 255);
-    /* filter: drop-shadow(
-        1px 2px 4px hsl(220deg 60% 50%)
-      ); */
     box-shadow: 1px 2px 4px rgb(0, 0, 0);
     border-radius: 0 8px 0 8px;
     overflow: hidden;
@@ -426,6 +471,17 @@ select {
     width: 300px;
     height: 240px;
     margin: auto 0;
+}
+
+.modal-img-wrapper {
+    max-height:340px;
+    max-width: 500px;
+}
+
+.modal-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .img-wrapper-car img {
@@ -447,11 +503,12 @@ select {
     margin-left: 2px;
 }
 
+
 .info-about-car p {
     margin-top: 14px;
     font-weight: 100;
     font-size: 14px;
-    max-width: 90%;
+    max-width: 95%;
     flex: 1;
 }
 
@@ -479,6 +536,21 @@ select {
     color: #F88A0A;
 }
 
+#modal {
+    background-color: black;
+    color: white;
+    opacity: 0.95;
+    text-align: center;
+    z-index: 5;
+    height: 600px;
+    width: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display:flex;
+    flex-direction:column;
+}
 
 .hire-me-div {
     margin-right: 24px;
@@ -497,23 +569,111 @@ select {
     cursor: pointer;
 }
 
+.checkout {
+    text-align: center;
+    background-color: #41913C;
+    color: white;
+    margin-top:auto;
+    padding: 10px;
+    cursor: pointer;
+    height:60px;
+    line-height: 60px;
+    font-size:26px;
+}
+.modal-wrapper-styling {
+    padding:12px;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
+.modal-wrapper-styling * {
+    margin-bottom:8px;
+    flex:1;
+}
+.cost-info-modal {
+    display:flex;
+    justify-content:space-evenly;
+}
 
 @font-face {
     font-family: "Quicksand";
-    /* src: url(../fonts/Quicksand-VariableFont_wght.ttf); */
-    src: url("../fonts/galano/GalanoGrotesqueAltMedium.otf");
+    src: url(../fonts/Quicksand-VariableFont_wght.ttf);
 }
 
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 875px) {
+    .nav-styling .padding-left-right-miniscule {
+        display: none;
+    }
+
+    .container-container-menu {
+        display: block;
+    }
+
+    input:focus~label,
+    input:valid~label {
+        display: none;
+    }
+
+    .text-part-of-section {
+        width: 400px;
+        margin-bottom: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .input-box-part-of-section {
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    .search-img-wrapper-wrapper {
+        margin-top: 12px;
+        width: 307px;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .search-icon-img-wrapper {
+        max-width: 307px;
+        max-height: 50px;
+        margin: 0;
+        border-radius: 4px;
+    }
+
+    .white-container {
+        flex-direction: column;
+        padding: 40px 0;
+        border-radius: 8px;
+    }
+
+    .home-page-container {
+        margin-left: 0;
+        border-radius: 12px;
+    }
+
+    .input-holder {
+        margin: 0;
+    }
+
+    #pickup-location {
+        margin-bottom: 4px;
+    }
+
+    #travel-distance {
+        margin-top: 4px;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 730px) {
     .info-section-card {
         flex-direction: column;
         align-items: center;
     }
-
-    .info-section-card p {}
-
-    .info-about-car {}
 
     .img-wrapper-car {
         height: 160px;
@@ -542,6 +702,12 @@ select {
     .info-about-car h4 {
         margin-top: 16px !important;
         margin-bottom: 12px !important;
+    }
+}
+
+@media only screen and (max-width: 655px) {
+    br {
+        display: block;
     }
 }
 

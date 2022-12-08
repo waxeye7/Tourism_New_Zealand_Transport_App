@@ -8,8 +8,9 @@
     <link rel="icon" href="./img/icon.png">
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="./styles/burger.css">
     <link rel="stylesheet" href="./styles/NiceInput.css">
     <link rel="stylesheet" href="./styles/main.css">
 
@@ -24,13 +25,49 @@
     
     <header class="relative header-styling">
         <div class="logo-wrapper-header absolute">
-            <a href="https://www.tourismnewzealand.com/" target="_blank"><img src="./img/logo.png" alt="New Zealand Tourism Logo"></a>
+            <img src="./img/logo.png" alt="New Zealand Tourism Logo">
         </div>
+
+
+
         <nav class="flex justify-center nav-styling">
-            <a href="https://www.tourismnewzealand.com/" target="_blank"><h2 class="padding-left-right-miniscule">Home</h2></a>
-            <h2 class="padding-left-right-miniscule">Accomodation</h2>
-            <a href="./index.html"><h2 class="padding-left-right-miniscule">Vehicles</h2></a>
-            <h2 class="padding-left-right-miniscule">Abcdefg</h2>
+            <a href="https://www.tourismnewzealand.com/" target="_blank">
+                <h2 class="padding-left-right-miniscule">Home</h2>
+            </a>
+            <a href="#">
+                <h2 class="padding-left-right-miniscule">Accomodation</h2>
+            </a>
+            <a href="./index.html">
+                <h2 class="padding-left-right-miniscule">Vehicles</h2>
+            </a>
+            <a href="#">
+                <h2 class="padding-left-right-miniscule">Contact Us</h2>
+            </a>
+
+
+            <div class="container-container-menu">
+                <div class="container-menu" onclick="myFunction(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+
+                <div class="links hidden animate__animated animate__lightSpeedInRight">
+                    <a href="https://www.tourismnewzealand.com/" target="_blank">
+                        <h2>Home</h2>
+                    </a>
+                    <a href="#">
+                        <h2>Accomodation</h2>
+                    </a>
+                    <a href="./index.html">
+                        <h2>Vehicles</h2>
+                    </a>
+                    <a href="#">
+                        <h2>Contact Us</h2>
+                    </a>
+                </div>
+            </div>
+
         </nav>
     </header>
 
@@ -89,31 +126,40 @@
 
                         <!-- <input placeholder="Select your dates" id="date-selector-please" class="small-margin-bottom-gap border-none"> -->
 
-                        <div class="group small-margin-bottom-gap">
+
+
+                        <select id="travel-distance" class="small-margin-bottom-gap border-none">
+
+                            <option value="">Travel Distance</option>
+
+                            <option value=150>150km</option>
+                            <option value=300>300km</option>
+                            <option value=450>450km</option>
+                            <option value=600>600km</option>
+                            <option value=650>650km</option>
+                            <option value=800>800km</option>
+                            <option value=950>950km</option>
+                            <option value=1100>1100km</option>
+                            <option value=1250>1250km</option>
+                            <option value=1400>1400km</option>
+                            <option value=1550>1550km</option>
+                            <option value=1700>1700km</option>
+                            <!-- <option value=1850>1850km</option>
+                            <option value=2000>2000km</option> -->
+
+                        </select>
+
+
+                        <div class="group small-margin-top-gap">
                             <input id="date-selector-please">
                             <span class="highlighter"></span>
                             <label id="label-for-date" for="date-selector-please">Select your dates: </label>
                         </div>
 
-                        <select id="travel-distance" class="small-margin-top-gap border-none">
-
-                            <option value="">Travel Distance</option>
-
-                            <option value=100>100km</option>
-                            <option value=200>200km</option>
-                            <option value=300>300km</option>
-                            <option value=400>400km</option>
-                            <option value=500>500km</option>
-                            <option value=600>600km</option>
-                            <option value=700>700km</option>
-                            <option value=800>800km</option>
-                            <option value=900>900km</option>
-
-                        </select>
 
                     </div>
 
-                    <div>
+                    <div class="search-img-wrapper-wrapper">
                         <div id="search-button" class="search-icon-img-wrapper">
                             <img src="./img/search.svg" alt="search icon">
                         </div>

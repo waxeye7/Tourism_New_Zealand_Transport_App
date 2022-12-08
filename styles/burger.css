@@ -1,0 +1,63 @@
+.links {
+  flex-direction: column;
+  position: absolute;
+  left: -96px;
+  top: 48px;
+  text-align: right;
+  z-index: 21;
+  background-color: #171717fa;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.animate__animated.animate__lightSpeedInRight {
+  --animate-duration: 0.4s !important;
+  --animate-delay: 0.1s !important;
+}
+
+.container-container-menu a {
+  color: white !important;
+}
+
+
+.container-container-menu {
+  margin-left: auto;
+  margin-right: 28px;
+  display: none;
+  position: relative;
+}
+
+.container-menu {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.bar1 {
+  margin-top: 0px;
+}
+
+.bar3 {
+  margin-bottom: 0px;
+}
+
+.change-burger .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change-burger .bar2 {
+  opacity: 0;
+}
+
+.change-burger .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}

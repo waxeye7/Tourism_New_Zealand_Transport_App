@@ -1,34 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicles</title>
     <link rel="icon" href="./img/icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="./styles/burger.css">
     <link rel="stylesheet" href="./styles/main.css">
 </head>
+
 <body>
+    <div class="body-child">
+    <span id="dropdown-closer" class="hidden"></span>
+    <span id="modal-closer" class="hidden"></span>
+    
+    <div id="modal" class="hidden"></div>
+
     <header class="relative header-styling">
         <div class="logo-wrapper-header absolute">
-            <a href="https://www.tourismnewzealand.com/" target="_blank"><img src="./img/logo.png" alt="New Zealand Tourism Logo"></a>
+            <img src="./img/logo.png" alt="New Zealand Tourism Logo">
         </div>
         <nav class="flex justify-center nav-styling">
-            <a href="https://www.tourismnewzealand.com/" target="_blank"><h2 class="padding-left-right-miniscule">Home</h2></a>
-            <h2 class="padding-left-right-miniscule">Accomodation</h2>
-            <a href="./index.html"><h2 class="padding-left-right-miniscule">Vehicles</h2></a>
-            <h2 class="padding-left-right-miniscule">Abcdefg</h2>
+            <a href="https://www.tourismnewzealand.com/" target="_blank">
+                <h2 class="padding-left-right-miniscule">Home</h2>
+            </a>
+            <a href="#">
+                <h2 class="padding-left-right-miniscule">Accomodation</h2>
+            </a>
+            <a href="./index.html">
+                <h2 class="padding-left-right-miniscule">Vehicles</h2>
+            </a>
+            <a href="#">
+                <h2 class="padding-left-right-miniscule">Contact Us</h2>
+            </a>
+
+            <div class="container-container-menu">
+                <div class="container-menu" onclick="myFunction(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+
+                <div class="links hidden animate__animated animate__lightSpeedInRight">
+                    <a href="https://www.tourismnewzealand.com/" target="_blank">
+                        <h2>Home</h2>
+                    </a>
+                    <a href="#">
+                        <h2>Accomodation</h2>
+                    </a>
+                    <a href="./index.html">
+                        <h2>Vehicles</h2>
+                    </a>
+                    <a href="#">
+                        <h2>Contact Us</h2>
+                    </a>
+                </div>
+            </div>
+
+
+
         </nav>
     </header>
 
 
-    <section>
+    <section class="small-margin-left-gap">
+
 
         <h1 class="title-result">Showing results for: <span id="results-days" class="lighter-green"></span>
 
-            <span class="relative">
+
+            <span class="relative arrow-container">
                 <i class="arrow down"></i>
                 <span class="arrow-content hidden">
                     <div>
@@ -42,13 +87,21 @@
                         <p class="day-item">8</p>
                         <p class="day-item">9</p>
                         <p class="day-item">10</p>
+                        <p class="day-item">11</p>
+                        <p class="day-item">12</p>
+                        <p class="day-item">13</p>
+                        <p class="day-item">14</p>
+                        <p class="day-item">15</p>
+                        <p class="day-item">16</p>
                     </div>
                 </span>
             </span>
-
-            <span>and</span> <span class="lighter-green" id="results-people">_</span>
             
-            <span class="relative">
+            <br>
+
+            <span> and</span> <span class="lighter-green" id="results-people">_</span>
+
+            <span class="relative arrow-container">
                 <i class="arrow down"></i>
                 <span class="arrow-content hidden">
                     <div>
@@ -59,9 +112,6 @@
                         <p class="people-item">5</p>
                         <p class="people-item">6</p>
                         <p class="people-item">7</p>
-                        <p class="people-item">8</p>
-                        <p class="people-item">9</p>
-                        <p class="people-item">10</p>
                     </div>
                 </span>
             </span>
@@ -69,18 +119,23 @@
         </h1>
 
         <h3 id="found-results-h3" class="found-result">Found:
-            <span id="motorbikes-amount" class="lighter-green found-amount">_</span> <span class="hidden" id="after-motorbike-and">and</span>
-            <span id="small-cars-amount" class="lighter-green found-amount">_</span> <span class="hidden" id="after-small-car-and">and</span>
-            <span id="large-cars-amount" class="lighter-green found-amount">_</span> <span class="hidden" id="after-large-car-and">and</span>
-            <span id="motor-home-amount" class="lighter-green found-amount">_</span> 
-            to pickup from <span id="results-location" class="lighter-green">_</span></h3>
+            <span id="motorbikes-amount" class="lighter-green found-amount">_</span> <span class="hidden"
+                id="after-motorbike-and">and</span>
+            <span id="small-cars-amount" class="lighter-green found-amount">_</span> <span class="hidden"
+                id="after-small-car-and">and</span>
+            <span id="large-cars-amount" class="lighter-green found-amount">_</span> <span class="hidden"
+                id="after-large-car-and">and</span>
+            <span id="motor-home-amount" class="lighter-green found-amount">_</span>
+            to pickup from <span id="results-location" class="lighter-green">_</span>
+        </h3>
 
 
         <div id="refine-search">
-            <p class="refine-search-h1">Your search - <span id="theirdaysandpeople">their days and people</span> - did not match with any vehicle in our armada.</p>
+            <p class="refine-search-h1">Your search - <span id="theirdaysandpeople">their days and people</span> - did
+                not match with any vehicle in our armada.</p>
             <p>Suggestions:</p>
             <ul>
-                <li>Try entering a day value less than or equal to 10</li>
+                <li>Try entering a day value less than or equal to 15</li>
                 <li>Try entering a people value less than or equal to 6</li>
                 <li>Pray</li>
             </ul>
@@ -88,17 +143,20 @@
                 <img src="./img/sad_dog.jpg" alt="">
             </div>
         </div>
-        
+
     </section>
 
     <section id="vehicles-container" class="nice-margin-page"></section>
 
+    </div>
 
 
-    
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    
+
     <script src="./javascript/results.js"></script>
 </body>
 </html>

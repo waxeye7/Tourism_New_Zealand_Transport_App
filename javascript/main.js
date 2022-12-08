@@ -1,3 +1,8 @@
+function myFunction(x) {
+  x.classList.toggle("change-burger");
+  x.parentNode.children[1].classList.toggle("hidden");
+}
+
 // date thing
 flatpickr($("#date-selector-please")[0],
     {
